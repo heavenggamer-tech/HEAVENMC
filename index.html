@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HEAVENMC — Minecraft Network</title>
+<meta name="description" content="HEAVENMC — Black & red Minecraft network. Join, compete, vote and shop.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#050505;--panel:#0d0d0f;--panel2:#121214;--red:#ef233c;--red2:#ff5267;--text:#f7f7f8;--muted:#9b9ba3;--line:#252529}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 50% -10%,#3b0710 0,#100305 25%,var(--bg) 55%);color:var(--text);line-height:1.5}
+a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}
+nav{height:74px;position:sticky;top:0;z-index:50;background:#050505dd;backdrop-filter:blur(14px);border-bottom:1px solid #271216}
+.navin{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1px}.brand img{width:43px;height:43px;border-radius:10px;object-fit:cover}.brand span{color:#fff}.brand b{color:var(--red)}
+.links{display:flex;gap:25px;color:#c7c7cc;font-weight:700;font-size:14px}.links a:hover{color:#fff}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:690px;display:grid;place-items:center;text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,#050505),radial-gradient(circle,#e11b3425,transparent 45%);pointer-events:none}
+.hero>*{position:relative}.eyebrow{display:inline-flex;border:1px solid #5b1a23;background:#16070a;padding:8px 14px;border-radius:999px;color:#ff7180;font-size:12px;font-weight:900;letter-spacing:1.5px}
+.hero-logo{width:min(410px,80vw);margin:22px auto 18px;border-radius:25px;box-shadow:0 0 80px #e91d3d35}
+h1{font-size:clamp(36px,6vw,70px);line-height:1.02;letter-spacing:-3px}.hero p{max-width:680px;color:#aaa;margin:18px auto 28px;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:9px;padding:13px 20px;font-weight:900;cursor:pointer;margin:4px}.primary{background:var(--red);color:#fff;box-shadow:0 10px 30px #ef233c35}.primary:hover{background:var(--red2)}.ghost{background:#111113;border:1px solid #333;color:#eee}
+section{padding:82px 0}.section-head{text-align:center;margin-bottom:38px}.section-head h2{font-size:38px;letter-spacing:-1px}.section-head p{color:var(--muted);margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:linear-gradient(145deg,#121214,#0a0a0b);border:1px solid var(--line);border-radius:16px;padding:24px}.card:hover{border-color:#4c1b22;transform:translateY(-2px);transition:.2s}.icon{font-size:28px;margin-bottom:14px}.card h3{font-size:18px;margin-bottom:7px}.card p{color:#999;font-size:14px}
+.connect{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch}.ipcard{background:linear-gradient(120deg,#21070c,#0c0c0d);border:1px solid #4a171f;border-radius:18px;padding:30px}.label{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}.ip{font-size:30px;font-weight:900;margin:8px 0 18px;word-break:break-all}.stat{display:flex;align-items:center;gap:10px;color:#bbb}.dot{width:9px;height:9px;border-radius:50%;background:#777}
+.modes{grid-template-columns:repeat(3,1fr)}.mode{min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}.mode:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,#080809);pointer-events:none}.mode>*{position:relative;z-index:1}.mode .big{font-size:38px;margin-bottom:auto}.mode p{max-width:320px}
+.store{grid-template-columns:repeat(3,1fr)}.price{font-size:28px;font-weight:900;margin:15px 0}.tag{display:inline-block;font-size:11px;padding:5px 8px;border-radius:5px;background:#2b0b10;color:#ff6a79;border:1px solid #501721;font-weight:800}
+.payment{margin-top:22px;padding:18px;background:#0b0b0c;border-radius:10px;border:1px solid #27272b}.payment strong{color:#fff;font-size:19px}
+.rules{max-width:850px;margin:auto}.rule{display:flex;gap:17px;padding:20px 0;border-bottom:1px solid #202024}.num{color:var(--red);font-weight:900}
+.vote{background:linear-gradient(135deg,#1d060a,#0a0a0b);border:1px solid #42151d;border-radius:20px;padding:38px;text-align:center}.vote h2{font-size:38px}.vote p{color:#aaa;margin:10px auto 22px;max-width:650px}
+.faq{max-width:850px;margin:auto}.faq details{background:#0e0e10;border:1px solid #242428;border-radius:10px;margin:10px 0;padding:17px 20px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:#999;margin-top:10px}
+footer{border-top:1px solid #202024;padding:45px 0;color:#777}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:#fff}.copyright{margin-top:25px;font-size:12px}
+.toast{position:fixed;right:20px;bottom:20px;background:#151518;border:1px solid #39393e;padding:13px 17px;border-radius:10px;display:none;z-index:100;box-shadow:0 10px 30px #000}
+.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:90;padding:20px}.modalbox{width:min(520px,100%);background:#101012;border:1px solid #3b171e;border-radius:18px;padding:28px}.modalbox h3{font-size:25px;margin-bottom:8px}.modalbox p{color:#999;margin-bottom:18px}.close{float:right;background:none;border:0;color:#aaa;font-size:25px;cursor:pointer}
+@media(max-width:850px){.links{display:none}.menu{display:block}.grid,.modes,.store{grid-template-columns:1fr 1fr}.connect{grid-template-columns:1fr}}
+@media(max-width:560px){.grid,.modes,.store{grid-template-columns:1fr}.hero{min-height:620px}.section-head h2{font-size:31px}.hero-logo{width:85vw}.ip{font-size:23px}}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+<a class="brand" href="#home"><img src="logo.png" alt="HEAVENMC"><span>HEAVEN<b>MC</b></span></a>
+<div class="links"><a href="#home">Home</a><a href="#modes">Modes</a><a href="#store">Store</a><a href="#vote">Vote</a><a href="#rules">Rules</a><a href="#faq">FAQ</a></div>
+<button class="menu" onclick="alert('Use the sections below to navigate.')">☰</button>
+</div></nav>
+
+<header class="hero" id="home"><div class="container">
+<span class="eyebrow">⚔️ MINECRAFT NETWORK</span>
+<img class="hero-logo" src="logo.png" alt="HEAVENMC Logo">
+<h1>ENTER THE <span style="color:var(--red)">HEAVEN</span></h1>
+<p>Compete, grind and dominate. HEAVENMC is built for players who want fast PvP, intense competition and a strong community.</p>
+<a class="btn primary" href="#connect">▶ PLAY NOW</a><a class="btn ghost" href="#store">🛒 OPEN STORE</a>
+</div></header>
+
+<section id="connect"><div class="container"><div class="section-head"><h2>JOIN HEAVENMC</h2><p>One IP. Jump in and start playing.</p></div>
+<div class="connect"><div class="ipcard"><div class="label">Java / Server Address</div><div class="ip" id="ip">heavenMCS1.fun</div><button class="btn primary" onclick="copyIP()">COPY SERVER IP</button></div>
+<div class="card"><div class="icon">🌐</div><h3>Server Access</h3><p>Use the server address above in Minecraft Multiplayer. If your network supports Bedrock through your setup, use the connection details provided by your server staff.</p><div class="stat" style="margin-top:18px"><span class="dot"></span> Server status: check in-game</div></div></div></div></section>
+
+<section id="modes"><div class="container"><div class="section-head"><h2>GAME MODES</h2><p>Choose your battlefield.</p></div>
+<div class="grid modes">
+<div class="card mode"><div class="big">⚔️</div><h3>Practice</h3><p>Improve your PvP mechanics, combos and movement.</p></div>
+<div class="card mode"><div class="big">❤️</div><h3>LifeSteal</h3><p>Fight, progress and protect your hearts.</p></div>
+<div class="card mode"><div class="big">🏆</div><h3>Competitive</h3><p>Climb the ranks and become a top player.</p></div>
+</div></div></section>
+
+<section id="features"><div class="container"><div class="section-head"><h2>WHY HEAVENMC?</h2><p>Made for an active Minecraft community.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">⚡</div><h3>Fast Gameplay</h3><p>Action-focused gameplay designed around competitive Minecraft.</p></div>
+<div class="card"><div class="icon">🛡️</div><h3>Fair Play</h3><p>Rules and staff systems built to keep competition enjoyable.</p></div>
+<div class="card"><div class="icon">🎁</div><h3>Events & Rewards</h3><p>Community events, challenges and rewards can keep the grind exciting.</p></div>
+<div class="card"><div class="icon">💬</div><h3>Community</h3><p>Join the community and stay connected with players and staff.</p></div>
+</div></div></section>
+
+<section id="store"><div class="container"><div class="section-head"><h2>HEAVENMC STORE</h2><p>Support the server and unlock optional perks.</p></div>
+<div class="grid store">
+<div class="card"><span class="tag">RANK</span><h3 style="margin-top:13px">HEAVEN</h3><div class="price">Contact us</div><p>Premium rank package. Final perks and price can be set by the server owner.</p><button class="btn primary" onclick="openPay()">BUY / ASK</button></div>
+<div class="card"><span class="tag">RANK</span><h3 style="margin-top:13px">LEGEND</h3><div class="price">Contact us</div><p>High-tier supporter package with server-defined perks.</p><button class="btn primary" onclick="openPay()">BUY / ASK</button></div>
+<div class="card"><span class="tag">SUPPORT</span><h3 style="margin-top:13px">CUSTOM</h3><div class="price">Contact us</div><p>Ask staff about ranks, keys, bundles or other store items.</p><button class="btn ghost" onclick="openPay()">PAYMENT INFO</button></div>
+</div>
+<div class="payment"><b>Easypaisa Payment</b><br><span style="color:#aaa">Payment number:</span> <strong>03144820126</strong><br><small style="color:#777">Only pay after confirming the exact product and price with HEAVENMC staff.</small></div>
+</div></section>
+
+<section id="vote"><div class="container"><div class="vote"><h2>SUPPORT HEAVENMC ❤️</h2><p>Voting helps your server grow. Add your official voting link here when you have one.</p><button class="btn primary" onclick="toast('Vote link is not configured yet.')">VOTE NOW</button></div></div></section>
+
+<section id="rules"><div class="container"><div class="section-head"><h2>SERVER RULES</h2><p>Play fair. Respect everyone.</p></div><div class="rules">
+<div class="rule"><span class="num">01</span><div><b>No cheating</b><p style="color:#888">Hacks, unfair clients and prohibited exploits are not allowed.</p></div></div>
+<div class="rule"><span class="num">02</span><div><b>Respect players</b><p style="color:#888">No harassment, hate speech or targeted abuse.</p></div></div>
+<div class="rule"><span class="num">03</span><div><b>No exploiting</b><p style="color:#888">Report serious bugs instead of abusing them.</p></div></div>
+<div class="rule"><span class="num">04</span><div><b>Follow staff</b><p style="color:#888">Staff may take action when needed to protect the community.</p></div></div>
+<div class="rule"><span class="num">05</span><div><b>Use common sense</b><p style="color:#888">Not every situation can be listed; keep the server enjoyable.</p></div></div>
+</div></div></section>
+
+<section id="faq"><div class="container"><div class="section-head"><h2>FAQ</h2><p>Quick answers for new players.</p></div><div class="faq">
+<details><summary>How do I join?</summary><p>Open Minecraft Multiplayer, add a server and enter <b>heavenMCS1.fun</b>.</p></details>
+<details><summary>What is the server IP?</summary><p>Your current HEAVENMC server address is <b>heavenMCS1.fun</b>.</p></details>
+<details><summary>How do I buy a rank?</summary><p>Contact HEAVENMC staff first to confirm the product and price, then use the Easypaisa payment details shown on the Store section.</p></details>
+<details><summary>Where is the Discord?</summary><p>Add your official Discord invite link to the website when your Discord server is ready.</p></details>
+</div></div></section>
+
+<footer><div class="container"><div class="foot"><div><a class="brand" href="#home"><img src="logo.png" alt=""><span>HEAVEN<b>MC</b></span></a><p style="margin-top:12px">Minecraft Network • heavenMCS1.fun</p></div><div><b style="color:#fff">Quick Links</b><p style="margin-top:10px"><a href="#store">Store</a> · <a href="#rules">Rules</a> · <a href="#faq">FAQ</a></p></div></div><div class="copyright">© 2026 HEAVENMC. Not affiliated with Mojang or Microsoft.</div></div></footer>
+
+<div class="modal" id="payModal" onclick="if(event.target===this)closePay()"><div class="modalbox"><button class="close" onclick="closePay()">×</button><h3>Easypaisa Payment</h3><p>Before sending payment, confirm the exact rank/item and price with HEAVENMC staff.</p><div class="payment"><span style="color:#aaa">Easypaisa:</span><br><strong>03144820126</strong></div><button class="btn primary" style="margin-top:18px" onclick="closePay()">DONE</button></div></div>
+<div class="toast" id="toast"></div>
+<script>
+function copyIP(){navigator.clipboard?.writeText('heavenMCS1.fun');toast('Server IP copied: heavenMCS1.fun')}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2200)}
+function openPay(){document.getElementById('payModal').style.display='grid'}
+function closePay(){document.getElementById('payModal').style.display='none'}
+</script>
+</body></html>
