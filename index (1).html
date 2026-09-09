@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HEAVEN SMP | Store</title>
+<meta name="description" content="HEAVEN SMP Lifesteal Store">
+<style>
+:root{--bg:#050816;--card:rgba(13,19,39,.78);--card2:rgba(18,27,53,.92);--text:#f7f8ff;--muted:#aab4d0;--accent:#8b5cf6;--accent2:#22d3ee;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 10%,#182050 0,transparent 34%),radial-gradient(circle at 80% 30%,#0d4054 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(139,92,246,.08),transparent 45%,rgba(34,211,238,.06))}
+a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(5,8,22,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:1px;font-size:20px}.brand span{color:var(--accent2)}
+.links{display:flex;gap:24px;color:var(--muted);font-size:14px}.links a:hover{color:white}
+.hero{padding:92px 0 62px;text-align:center;position:relative}.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);color:#cfd6ef;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;background:#45f39a;box-shadow:0 0 14px #45f39a}.hero h1{font-size:clamp(44px,8vw,82px);line-height:.95;margin:22px 0 16px;letter-spacing:-4px}.grad{background:linear-gradient(90deg,#fff,#b8a1ff 48%,#63e7ff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:650px;margin:0 auto 28px;color:var(--muted);font-size:17px;line-height:1.7}.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{padding:13px 20px;border-radius:12px;border:1px solid var(--line);font-weight:800;transition:.2s}.btn.primary{background:linear-gradient(135deg,var(--accent),#5b21b6);box-shadow:0 10px 35px rgba(139,92,246,.25)}.btn.secondary{background:rgba(255,255,255,.05)}.btn:hover{transform:translateY(-2px)}
+.status{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:32px}.status span{padding:9px 13px;border-radius:10px;background:rgba(255,255,255,.045);border:1px solid var(--line);color:#c6cce0;font-size:13px}
+section{padding:42px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}.eyebrow{color:#8eeeff;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:900}.sectionhead h2{margin:6px 0 0;font-size:32px}.sectionhead p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 20px 55px rgba(0,0,0,.2);transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.5)}.card:after{content:"";position:absolute;width:120px;height:120px;right:-50px;top:-50px;border-radius:50%;background:rgba(139,92,246,.16);filter:blur(3px)}
+.icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(139,92,246,.28),rgba(34,211,238,.12));border:1px solid var(--line);font-size:25px}.card h3{margin:17px 0 7px;font-size:21px}.desc{color:var(--muted);font-size:14px;line-height:1.6;min-height:45px}.price{font-size:29px;font-weight:900;margin:18px 0}.price small{font-size:13px;color:var(--muted);font-weight:600}.buy{display:block;text-align:center;padding:12px;border-radius:11px;background:#fff;color:#090b15;font-weight:900}.buy:hover{background:#dfe4ff}
+.badge{position:absolute;right:18px;top:18px;font-size:11px;padding:6px 9px;border-radius:999px;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.35);color:#d9ceff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:22px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.035)}.num{font-size:12px;color:#8eeeff;font-weight:900}.step h3{margin:10px 0 6px}.step p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
+.support{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,rgba(139,92,246,.14),rgba(34,211,238,.07))}
+footer{padding:35px 0 55px;color:#7f8aa8;font-size:13px;text-align:center}
+@media(max-width:800px){.links{display:none}.grid,.steps{grid-template-columns:1fr}.hero{padding-top:65px}.hero h1{letter-spacing:-2px}.support{flex-direction:column;align-items:flex-start}}
+
+.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.payment-card{padding:24px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:rgba(255,255,255,.045);box-shadow:0 12px 35px rgba(0,0,0,.18)}
+.payment-icon{font-size:32px;margin-bottom:12px}
+.payment-card h3{margin:0 0 8px}
+.payment-card p{opacity:.72;line-height:1.55}
+.payment-detail{margin-top:18px;padding:12px;border-radius:12px;background:rgba(255,255,255,.06);font-size:12px;font-weight:800;letter-spacing:.08em;word-break:break-word}
+.payment-note{margin-top:18px;padding:14px 16px;border-radius:14px;background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.18);font-size:13px}
+@media(max-width:800px){.payment-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<nav><div class="wrap navin">
+  <a class="brand" href="#">HEAVEN<span> SMP</span></a>
+  <div class="links"><a href="#store">Store</a><a href="#how">How to Buy</a><a href="#support">Support</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="pill"><i class="dot"></i> HEAVEN SMP • LIFESTEAL</div>
+  <h1><span class="grad">POWER UP YOUR</span><br>ADVENTURE</h1>
+  <p>Premium keys and coins for the HEAVEN SMP. Fast, simple and made for the grind.</p>
+  <div class="buttons"><a class="btn primary" href="#store">Open Store ↓</a><a class="btn secondary" href="https://discord.gg/VAcXvK99bS" target="_blank">Discord Support</a></div>
+  <div class="status"><span>⚡ Instant-style delivery</span><span>🛡️ Secure checkout</span><span>🌙 Lifesteal</span></div>
+</div></header>
+
+<main id="store" class="wrap">
+<section>
+  <div class="sectionhead"><div><div class="eyebrow">Featured shop</div><h2>Keys & Coins</h2></div><p>Choose your upgrade</p></div>
+  <div class="grid">
+    <article class="card"><span class="badge">POPULAR</span><div class="icon">🔑</div><h3>Heaven Key</h3><div class="desc">Unlock powerful rewards and take your Lifesteal journey further.</div><div class="price">299 <small>PKR</small></div><a class="buy" href="https://discord.gg/VAcXvK99bS" target="_blank">Buy via Discord</a></article>
+    <article class="card"><div class="icon">🗝️</div><h3>Prime Key</h3><div class="desc">A compact upgrade for players who want extra rewards.</div><div class="price">200 <small>PKR</small></div><a class="buy" href="https://discord.gg/VAcXvK99bS" target="_blank">Buy via Discord</a></article>
+    <article class="card"><div class="icon">🪙</div><h3>500 Coins</h3><div class="desc">Boost your balance and spend coins around the server.</div><div class="price">199 <small>PKR</small></div><a class="buy" href="https://discord.gg/VAcXvK99bS" target="_blank">Buy via Discord</a></article>
+    <article class="card"><div class="icon">💰</div><h3>1,000 Coins</h3><div class="desc">More coins, more choices, more ways to enjoy the server.</div><div class="price">299 <small>PKR</small></div><a class="buy" href="https://discord.gg/VAcXvK99bS" target="_blank">Buy via Discord</a></article>
+    <article class="card"><span class="badge">BEST VALUE</span><div class="icon">💎</div><h3>5,000 Coins</h3><div class="desc">The big coin bundle for serious HEAVEN SMP players.</div><div class="price">1,000 <small>PKR</small></div><a class="buy" href="https://discord.gg/VAcXvK99bS" target="_blank">Buy via Discord</a></article>
+  </div>
+</section>
+
+
+<section id="payment" class="section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">PAYMENT METHODS</span>
+      <h2>Choose your payment method</h2>
+    </div>
+    <p>Pay using one of the methods below, then send your payment screenshot with your cart screenshot on Discord.</p>
+  </div>
+
+  <div class="payment-grid">
+    <div class="payment-card">
+      <div class="payment-icon">💳</div>
+      <h3>EasyPaisa</h3>
+      <p>Send your payment to our EasyPaisa account.</p>
+      <div class="payment-detail">ADD YOUR EASYPAISA NUMBER</div>
+    </div>
+
+    <div class="payment-card">
+      <div class="payment-icon">📱</div>
+      <h3>JazzCash</h3>
+      <p>Send your payment to our JazzCash account.</p>
+      <div class="payment-detail">ADD YOUR JAZZCASH NUMBER</div>
+    </div>
+
+    <div class="payment-card">
+      <div class="payment-icon">🏦</div>
+      <h3>Bank Transfer</h3>
+      <p>Bank transfer is available on request.</p>
+      <div class="payment-detail">DM DISCORD FOR BANK DETAILS</div>
+    </div>
+  </div>
+
+  <div class="payment-note">
+    <strong>⚠️ Important:</strong> Replace the placeholder payment details with your real account number/name before publishing.
+  </div>
+</section>
+
+<section id="how">
+  <div class="sectionhead"><div><div class="eyebrow">Simple process</div><h2>How to Buy</h2></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">01 / SELECT</div><h3>Pick your item</h3><p>Choose a key or coin package from the store above.</p></div>
+    <div class="step"><div class="num">02 / CONTACT</div><h3>Join Discord</h3><p>Send a screenshot of your cart and DM the support team.</p></div>
+    <div class="step"><div class="num">03 / RECEIVE</div><h3>Enjoy the upgrade</h3><p>Follow the payment and delivery instructions from support.</p></div>
+  </div>
+</section>
+
+<section id="support">
+  <div class="support"><div><div class="eyebrow">Need help?</div><h2 style="margin:7px 0">HEAVEN Store Support</h2><p style="color:var(--muted);margin:0">Send a screenshot of your cart and DM us on Discord.</p></div><a class="btn primary" href="https://discord.gg/VAcXvK99bS" target="_blank">Join Discord</a></div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 HEAVEN SMP • <strong>heavensmps1.fun</strong> • Lifesteal Store</div></footer>
+</body>
+</html>
